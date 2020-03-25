@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2595062361806088715}
   - component: {fileID: 2595062361806088713}
+  - component: {fileID: 1483722117734854990}
   - component: {fileID: 2595062361806088712}
   - component: {fileID: 6188299739599204396}
   - component: {fileID: 5286783244602336295}
@@ -49,7 +50,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 7
+  jumpSpeed: 8
+--- !u!114 &1483722117734854990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595062361806088714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff661c4d9fe53048bfbc64f6ed25ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvincible: 0
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 15881a2023c81d54bb5cac946afe6260, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &2595062361806088712
 Rigidbody2D:
   serializedVersion: 4
@@ -84,8 +112,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0512202, y: -0.10175119}
-  m_Size: {x: 0.34444577, y: 0.24650535}
+  m_Offset: {x: 0.12266331, y: -0.19098638}
+  m_Size: {x: 0.66594106, y: 0.42497808}
   m_Direction: 1
 --- !u!61 &5286783244602336295
 BoxCollider2D:
@@ -100,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03543178, y: -0.272215}
+  m_Offset: {x: 0.0069876015, y: -0.44845474}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -111,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11926882, y: 0.13851333}
+  m_Size: {x: 0.5345321, y: 0.2322104}
   m_EdgeRadius: 0
 --- !u!95 &4834520087245296117
 Animator:
@@ -202,7 +230,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8565371673517b14388fc2d7b8e1d513, type: 3}
+  m_Sprite: {fileID: -4979330397365602102, guid: f898c0eff5e870047b3603216398759b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
