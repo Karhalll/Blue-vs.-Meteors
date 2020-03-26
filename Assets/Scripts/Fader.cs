@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Fader : MonoBehaviour
 {
+    [SerializeField] float delay = 0f;
+
     CanvasGroup canvasGroup;
     Coroutine currentActiveFade = null;
 
@@ -38,6 +40,8 @@ public class Fader : MonoBehaviour
 
     private IEnumerator FadeRoutine(float target, float time)
     {
+        yield return new WaitForSeconds(delay);
+
         while (!Mathf.Approximately(canvasGroup.alpha, target))
         {
             canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, target, Time.deltaTime / time);

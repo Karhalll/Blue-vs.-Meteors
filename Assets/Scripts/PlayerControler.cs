@@ -11,6 +11,8 @@ public class PlayerControler : MonoBehaviour
     BoxCollider2D myFeet;
     Animator myAnimator;
 
+    bool isDead = false;
+
     private void Awake() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -20,9 +22,15 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
+        if (isDead) { return; }
         Run();
         Jump();
         FlipSprite();
+    }
+
+    public void OnPlayerDeath()
+    {
+        isDead = true;
     }
 
     private void Run()

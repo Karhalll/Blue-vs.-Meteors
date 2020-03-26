@@ -8,9 +8,9 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] bool isInvincible = false;
     [SerializeField] UnityEvent deathEvent = null;
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnCollisionEnter2D(Collision2D other) 
     {
-        if (other.tag == "Meteor" && !isInvincible)
+        if (other.gameObject.tag == "Meteor" && !isInvincible)
         {
             Die();
         }
