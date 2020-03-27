@@ -52,7 +52,6 @@ public class Meteor : MonoBehaviour
         SpawnSplatter(impactPoint);
         myRigidBody.simulated = false;
         StartCoroutine(LightFadOff());
-        Destroy(gameObject, cameraShaker.duration + 10f);
     }
 
     private void StopEmitSmoke()

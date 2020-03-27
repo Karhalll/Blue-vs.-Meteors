@@ -7,6 +7,7 @@ public class MeteorSpawner : MonoBehaviour
     [Header("Assets")]
     [SerializeField] Meteor meteorPrefab = null;
     [SerializeField] SpawnRange spawnRange = null;
+    [SerializeField] Transform parent = null;
 
     [Header("Properities")]
     [SerializeField] float spawnTime = 1f;
@@ -29,12 +30,13 @@ public class MeteorSpawner : MonoBehaviour
         if (timer >= spawnTime)
         {
             Vector3 randomPosition = GetRandomPos();
-            Instantiate(meteorPrefab,
+            Meteor meteor = Instantiate(meteorPrefab,
                 randomPosition, 
-                Quaternion.identity, 
-                transform);
+                Quaternion.identity,
+                parent);
             
             timer = Mathf.Epsilon;
+            Destroy(meteor.gameObject, 5f);
         }
     }
 
