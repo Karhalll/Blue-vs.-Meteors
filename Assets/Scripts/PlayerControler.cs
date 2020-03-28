@@ -30,6 +30,7 @@ public class PlayerControler : MonoBehaviour
 
     public void OnPlayerDeath()
     {
+        myRigidbody.simulated = false;
         isDead = true;
     }
 

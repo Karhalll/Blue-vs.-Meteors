@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereRadius: 0.3
-  start: {fileID: 0}
-  end: {fileID: 0}
+  start: {fileID: 1621654727305367896}
+  end: {fileID: 1621654726007241622}
 --- !u!1 &1621654727305367899
 GameObject:
   m_ObjectHideFlags: 0

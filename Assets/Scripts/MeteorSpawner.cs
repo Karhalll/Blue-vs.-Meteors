@@ -36,7 +36,7 @@ public class MeteorSpawner : MonoBehaviour
                 parent);
             
             timer = Mathf.Epsilon;
-            Destroy(meteor.gameObject, 5f);
+            Destroy(meteor.gameObject, 10f);
         }
     }
 

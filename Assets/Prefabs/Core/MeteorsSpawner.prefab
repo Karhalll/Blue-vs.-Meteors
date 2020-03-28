@@ -47,7 +47,8 @@ MonoBehaviour:
   meteorPrefab: {fileID: 1781891909191067813, guid: 7aa3a5dd42a77104aa8493946a74cfeb,
     type: 3}
   spawnRange: {fileID: 9114410396240910704}
-  spawnTime: 2
+  parent: {fileID: 0}
+  spawnTime: 1
   maxAtOnce: 20
 --- !u!1001 &7565385015670064765
 PrefabInstance:
