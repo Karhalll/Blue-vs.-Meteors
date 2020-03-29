@@ -57,12 +57,15 @@ namespace BvsM.Faders
         {
             while (!Mathf.Approximately(spriteStartingAlpha, target))
             {
-                float newAlpha = Mathf.MoveTowards(mySprite.color.a, target, Time.deltaTime / time);
+                float currentAlpha = mySprite.color.a;
+                currentAlpha -= (Time.deltaTime / time) * spriteStartingAlpha;
+
+                float newAlpha = (Time.deltaTime / time) * spriteStartingAlpha;
                 Color changingAplha = new Color(
                 mySprite.color.r,
                 mySprite.color.g,
                 mySprite.color.b,
-                newAlpha
+                currentAlpha
                 );
 
                 mySprite.color = changingAplha;

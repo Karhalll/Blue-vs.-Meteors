@@ -9,6 +9,9 @@ namespace BvsM.Faders
     [RequireComponent(typeof(Light2D))]
     public class LightFader2D : MonoBehaviour
     {
+        [Curve(0,0,1f,1f, true)]
+        [SerializeField] AnimationCurve FadingCurve = null;
+
         Light2D myLight = null;
         Coroutine currentActiveFade = null;
 
@@ -50,10 +53,26 @@ namespace BvsM.Faders
 
         private IEnumerator FadeRoutine(float target, float time)
         {
-            while (!Mathf.Approximately(lightStartingIntensity, target))
+            float timeValue = 0f;
+
+            while (timeValue < time)
             {
-                myLight.intensity = Mathf.MoveTowards(myLight.intensity, target, Time.deltaTime / time);
+                myLight.intensity = FadingCurve.Evaluate(timeValue / time) * target;
+
+                timeValue += Time.deltaTime;
                 yield return null;
+            }
+        }
+
+        public bool IsRunningCoroutine()
+        {
+            if (currentActiveFade == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

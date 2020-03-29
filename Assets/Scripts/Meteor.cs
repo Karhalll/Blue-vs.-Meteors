@@ -4,14 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-using UnityEngine.Experimental.Rendering.Universal;
-
-
 public class Meteor : MonoBehaviour
 {
     [SerializeField] SpriteRenderer meteorSprite = null;
     [SerializeField] GameObject splatterPref = null;
-    [SerializeField] Light2D myLight = null;
+    [SerializeField] GameObject myLight = null;
     [SerializeField] UnityEvent inpactEvent = null;
 
     ParticleSystem myParticleSystem;
@@ -34,6 +31,10 @@ public class Meteor : MonoBehaviour
                 Vector3 impactPoint = other.GetContact(0).point;
                 Impact(impactPoint);
             }
+            else if (other.gameObject.layer == 12)
+            {
+                Destroy(gameObject);
+            }
     }
 
     private void OnBecameVisible() 
@@ -49,8 +50,9 @@ public class Meteor : MonoBehaviour
         }
         
         StopEmitSmoke();
-        DisableComponents();
+        
         SpawnSplatter(impactPoint);
+        DisableComponents();
 
         Destroy(gameObject, 2f);
     }
@@ -59,7 +61,7 @@ public class Meteor : MonoBehaviour
     {
         meteorSprite.enabled = false;
         myCircleCollider.enabled = false;
-        myLight.intensity = 0f;
+        myLight.gameObject.SetActive(false);
         myRigidBody.simulated = false;
     }
 
