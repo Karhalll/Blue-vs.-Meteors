@@ -8,7 +8,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
 
     Rigidbody2D myRigidbody;
-    BoxCollider2D myFeet;
+    CapsuleCollider2D myFeet;
     Animator myAnimator;
 
     bool isDead = false;
@@ -16,7 +16,7 @@ public class PlayerControler : MonoBehaviour
     private void Awake() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myFeet = GetComponent<BoxCollider2D>();
+        myFeet = GetComponent<CapsuleCollider2D>();
         myAnimator = GetComponent<Animator>();
     }
 

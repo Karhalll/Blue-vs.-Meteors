@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f391dc617017345b6c2c94bf3ce572, type: 3}
-  m_Name: PlayerHP
+  m_Script: {fileID: 11500000, guid: fbe0617de42c98e4b988f794264408ee, type: 3}
+  m_Name: PlayerLooseLife
   m_EditorClassIdentifier: 
-  Value: 30

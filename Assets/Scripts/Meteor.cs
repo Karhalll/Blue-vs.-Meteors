@@ -24,17 +24,17 @@ public class Meteor : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-            if (other.gameObject.layer == 8)
-            {
-                Vector3 impactPoint = other.GetContact(0).point;
-                Impact(impactPoint);
-            }
-            else if (other.gameObject.layer == 12)
-            {
-                Destroy(gameObject);
-            }
+        if (other.gameObject.layer == 8)
+        {
+            Vector2 impactPoint = other.ClosestPoint(transform.position);
+            Impact(impactPoint);
+        }
+        else if (other.gameObject.layer == 12)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnBecameVisible() 
@@ -47,11 +47,10 @@ public class Meteor : MonoBehaviour
         if (wasVisible)
         {
             inpactEvent.Invoke();
+            SpawnSplatter(impactPoint);
         }
         
         StopEmitSmoke();
-        
-        SpawnSplatter(impactPoint);
         DisableComponents();
 
         Destroy(gameObject, 2f);

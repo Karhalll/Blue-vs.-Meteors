@@ -17,6 +17,11 @@ public class IntVariable : ScriptableObject
         Value = value.Value;
     }
 
+    public int GetValue()
+    {
+        return Value;
+    }
+
     public void ApplyChange(int amount)
     {
         Value += amount;
