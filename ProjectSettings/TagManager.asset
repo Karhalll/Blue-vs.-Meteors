@@ -40,11 +40,23 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3611223369
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Clouds
+    uniqueID: 1396524949
+    locked: 0
+  - name: Player
+    uniqueID: 1117647073
+    locked: 0
   - name: Ground
     uniqueID: 1813226359
+    locked: 0
+  - name: Platforms
+    uniqueID: 1530760871
     locked: 0
   - name: Meteor
     uniqueID: 4037479739
