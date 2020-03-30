@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+using BvsM.Platforms;
+
 public class Meteor : MonoBehaviour
 {
     [SerializeField] SpriteRenderer meteorSprite = null;
@@ -31,6 +33,11 @@ public class Meteor : MonoBehaviour
             Vector2 impactPoint = other.ClosestPoint(transform.position);
             Impact(impactPoint);
         }
+        else if (other.gameObject.layer == 13)
+        {
+            Vector2 impactPoint = other.ClosestPoint(transform.position);
+            Impact(impactPoint, other.gameObject);
+        }
         else if (other.gameObject.layer == 12)
         {
             Destroy(gameObject);
@@ -56,6 +63,20 @@ public class Meteor : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
+    private void Impact(Vector3 impactPoint, GameObject platform)
+    {
+        if (wasVisible)
+        {
+            inpactEvent.Invoke();
+            SpawnSplatterOnMovable(impactPoint, platform);
+        }
+
+        StopEmitSmoke();
+        DisableComponents();
+
+        Destroy(gameObject, 2f);
+    }
+
     private void DisableComponents()
     {
         meteorSprite.enabled = false;
@@ -73,5 +94,11 @@ public class Meteor : MonoBehaviour
     private void SpawnSplatter(Vector3 impactPoint)
     {
         Instantiate(splatterPref, impactPoint, Quaternion.identity);
+    }
+
+    private void SpawnSplatterOnMovable(Vector3 impactPoint, GameObject platform)
+    {
+        Transform platformSprite = platform.GetComponentInParent<MovingPlatform>().GetPlatform();
+        GameObject splatter = Instantiate(splatterPref, impactPoint, Quaternion.identity, platformSprite);   
     }
 }
