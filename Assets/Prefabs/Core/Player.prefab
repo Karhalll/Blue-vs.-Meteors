@@ -68,7 +68,7 @@ MonoBehaviour:
     playerLifes: {fileID: 11400000, guid: 0348a7dfd7877844987436371ad9e049, type: 2}
     playerHP: {fileID: 11400000, guid: 14498e266d0bbfd4f86cb94cd86db662, type: 2}
   Testing: 1
-  currentLifes: 3
+  currentLifes: 5
   currentHPInLife: 100
   onGetDamage:
     m_PersistentCalls:
