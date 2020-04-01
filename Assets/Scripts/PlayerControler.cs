@@ -7,8 +7,9 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
 
+    [SerializeField] BoxCollider2D myFeet = null;
+
     Rigidbody2D myRigidbody;
-    CapsuleCollider2D myFeet;
     Animator myAnimator;
 
     bool isDead = false;
@@ -16,7 +17,6 @@ public class PlayerControler : MonoBehaviour
     private void Awake() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myFeet = GetComponent<CapsuleCollider2D>();
         myAnimator = GetComponent<Animator>();
     }
 
@@ -46,7 +46,10 @@ public class PlayerControler : MonoBehaviour
 
     private void Jump()
     {
-        if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        bool isTouchingGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        bool isTouchingPlatform = myFeet.IsTouchingLayers(LayerMask.GetMask("MovingPlatform"));
+
+        if (!isTouchingGround && !isTouchingPlatform) { return; }
 
         if (Input.GetButtonDown("Jump"))
         {

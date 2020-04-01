@@ -4,18 +4,17 @@ using UnityEngine;
 
 namespace BvsM.Platforms
 {
-    public class MovingPlatform : MonoBehaviour
+    public class RotatingPlatform : MonoBehaviour
     {
         [SerializeField] Transform platform = null;
-        [SerializeField] public Vector2 movementVector = Vector2.up;
         [SerializeField] float maxAngel = 0f;
-        [Range(1,10)]
+        [Range(1, 10)]
         [SerializeField] float period = 5f;
 
         Vector3 startingPos;
-        float movementFactor;
+        float rotationFactor;
 
-        private void Update() 
+        private void Update()
         {
             if (period <= Mathf.Epsilon) { return; } // protect against period is zero
             float cycles = Time.time / period; // grows continually from 0
@@ -25,17 +24,10 @@ namespace BvsM.Platforms
 
             startingPos = transform.position;
 
-            movementFactor = rawSinWave / 2f;
-            Vector3 offset = rawSinWave * movementVector;
-            platform.position = startingPos + offset;
+            rotationFactor = rawSinWave / 2f;
 
-            float newRotation = movementFactor * maxAngel;
+            float newRotation = rotationFactor * maxAngel;
             platform.rotation = Quaternion.Euler(0f, 0f, newRotation);
-        }
-
-        public Transform GetPlatform()
-        {
-            return platform;
         }
     }
 }

@@ -12,8 +12,21 @@ public class SceneController : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            LoadNextScene();
+        }
+    }
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(currentScene);
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(currentScene + 1);
     }
 }

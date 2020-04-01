@@ -99,6 +99,6 @@ public class Meteor : MonoBehaviour
     private void SpawnSplatterOnMovable(Vector3 impactPoint, GameObject platform)
     {
         Transform platformSprite = platform.GetComponentInParent<MovingPlatform>().GetPlatform();
-        GameObject splatter = Instantiate(splatterPref, impactPoint, Quaternion.identity, platformSprite);   
+        GameObject splatter = Instantiate(splatterPref, impactPoint, platformSprite.rotation, platformSprite);   
     }
 }
