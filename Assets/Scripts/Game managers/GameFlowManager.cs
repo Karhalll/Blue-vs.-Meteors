@@ -16,9 +16,8 @@ public class GameFlowManager : ScriptableObject
         SceneManager.LoadScene(1);
     }
 
-    public void NextLevel()
+    public static void NextLevel()
     {
-        Debug.Log("Next LEvel");
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene + 1);
     }

@@ -52,6 +52,9 @@ TagManager:
   - name: Player
     uniqueID: 1117647073
     locked: 0
+  - name: Cage
+    uniqueID: 3355864289
+    locked: 0
   - name: Ground
     uniqueID: 1813226359
     locked: 0

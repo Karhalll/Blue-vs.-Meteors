@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 1104214603270317486}
   - component: {fileID: 4860974195710731651}
   - component: {fileID: 3738650523037079943}
+  - component: {fileID: 9193158724514588796}
+  - component: {fileID: 3047861506007961283}
   m_Layer: 0
   m_Name: Score Counter
   m_TagString: Untagged
@@ -234,6 +236,47 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9193158724514588796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229027423906335920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29c38cb249fd0d408e4ab8ac9ef1b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a234b3ac95f6f214f9af3e17a52fefaa, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3047861506007961283}
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 80
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3047861506007961283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229027423906335920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148acfcfdb234444fb6bc492a8928e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: {fileID: 11400000, guid: 24e766eb22bbb6e4fb9e55e850517d02, type: 2}
+  limitForLevel: 3000
 --- !u!1 &1668716928301779317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1741,7 @@ GameObject:
   - component: {fileID: 4786334809128560655}
   - component: {fileID: 36197822523415323}
   - component: {fileID: 2203716741399546601}
+  - component: {fileID: 8154350176548799006}
   m_Layer: 0
   m_Name: Score Header (1)
   m_TagString: Untagged
@@ -1764,6 +1808,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 99999
+--- !u!114 &8154350176548799006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4773484143479290890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f459cafb2bf51e409203f660b957754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorevariable: {fileID: 11400000, guid: 24e766eb22bbb6e4fb9e55e850517d02, type: 2}
 --- !u!1 &4899335173559646110
 GameObject:
   m_ObjectHideFlags: 0
