@@ -9,6 +9,8 @@ public class PlayerControler : MonoBehaviour
 
     [SerializeField] BoxCollider2D myFeet = null;
 
+
+    Vector3 startingPosition;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
 
@@ -18,6 +20,11 @@ public class PlayerControler : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+    }
+
+    private void Start() 
+    {
+        startingPosition = transform.position;
     }
 
     void Update()
@@ -32,6 +39,11 @@ public class PlayerControler : MonoBehaviour
     {
         myRigidbody.simulated = false;
         isDead = true;
+    }
+
+    public Vector3 GetStartingPosition()
+    {
+        return startingPosition;
     }
 
     private void Run()

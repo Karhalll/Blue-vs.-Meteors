@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5478065857870390829}
   - component: {fileID: 4747917968517522657}
   - component: {fileID: 4322895185961168088}
+  - component: {fileID: 2335133111035027620}
   m_Layer: 0
   m_Name: Lifes
   m_TagString: Untagged
@@ -95,6 +96,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 49b6b43eea8017042a440ebf82b58eab, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4747917968517522657}
+        m_MethodName: UpdateCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2335133111035027620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204708931194068114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29c38cb249fd0d408e4ab8ac9ef1b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d4a6414e38a5ecc4b9ba95357bab0a9b, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

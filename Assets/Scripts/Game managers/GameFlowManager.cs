@@ -27,6 +27,11 @@ public class GameFlowManager : ScriptableObject
         SceneManager.LoadScene(4);
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void Quit()
     {
         Application.Quit();
